@@ -19,3 +19,4 @@ infra/cdk.out/
 
 # その他
 .DS_Store
+local/

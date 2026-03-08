@@ -7,6 +7,7 @@ interface AudioPlayerState {
   currentTime: number;
   duration: number;
   volume: number;
+  playbackError: string | null;
 }
 
 export function useAudioPlayer(onTrackEnd?: () => void) {
@@ -17,6 +18,7 @@ export function useAudioPlayer(onTrackEnd?: () => void) {
     currentTime: 0,
     duration: 0,
     volume: 1,
+    playbackError: null,
   });
 
   useEffect(() => {
@@ -39,6 +41,20 @@ export function useAudioPlayer(onTrackEnd?: () => void) {
     audio.addEventListener("pause", () => {
       setState((s) => ({ ...s, isPlaying: false }));
     });
+    audio.addEventListener("error", async () => {
+      if (!audioRef.current) return;
+      const url = audioRef.current.src;
+      try {
+        const res = await fetch(url, { method: "HEAD" });
+        if (res.status === 403) {
+          document.cookie =
+            "music_auth=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+          window.location.reload();
+          return;
+        }
+      } catch {}
+      setState((s) => ({ ...s, playbackError: "再生エラーが発生しました" }));
+    });
 
     return () => {
       audio.pause();
@@ -60,7 +76,7 @@ export function useAudioPlayer(onTrackEnd?: () => void) {
       audio.src = src;
     }
     audio.play();
-    setState((s) => ({ ...s, currentTrack: track, isPlaying: true }));
+    setState((s) => ({ ...s, currentTrack: track, isPlaying: true, playbackError: null }));
   }, [state.currentTrack?.id]);
 
   const pause = useCallback(() => {

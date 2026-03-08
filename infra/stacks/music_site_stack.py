@@ -1,10 +1,15 @@
 """S3 + CloudFront + Lambda による音楽サイトインフラ"""
 
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
 from aws_cdk import (
     Stack,
     RemovalPolicy,
     Duration,
     CfnOutput,
+    Fn,
     aws_s3 as s3,
     aws_cloudfront as cloudfront,
     aws_cloudfront_origins as origins,
@@ -12,6 +17,8 @@ from aws_cdk import (
     aws_iam as iam,
 )
 from constructs import Construct
+
+load_dotenv(Path(__file__).resolve().parent.parent.parent / ".env")
 
 
 class MusicSiteStack(Stack):
@@ -37,8 +44,8 @@ class MusicSiteStack(Stack):
             timeout=Duration.seconds(10),
             memory_size=128,
             environment={
-                "SITE_PASSWORD": "CHANGE_ME",  # デプロイ後にパラメータストアから設定
-                "HMAC_SECRET": "CHANGE_ME",
+                "SITE_PASSWORD": os.environ["site-password"],
+                "HMAC_SECRET": os.environ["hmac-secret"],
             },
         )
 
@@ -47,12 +54,12 @@ class MusicSiteStack(Stack):
             auth_type=_lambda.FunctionUrlAuthType.NONE,
             cors=_lambda.FunctionUrlCorsOptions(
                 allowed_origins=["*"],
-                allowed_methods=[_lambda.HttpMethod.POST, _lambda.HttpMethod.OPTIONS],
+                allowed_methods=[_lambda.HttpMethod.POST],
                 allowed_headers=["Content-Type"],
             ),
         )
 
-        # CloudFront Function: 認証チェック + SPAルーティング
+        # CloudFront Function: /music/* 専用の認証チェック
         cf_function = cloudfront.Function(
             self,
             "AuthCheckFunction",
@@ -62,30 +69,20 @@ class MusicSiteStack(Stack):
             runtime=cloudfront.FunctionRuntime.JS_2_0,
         )
 
-        # Origin Access Identity
-        oai = cloudfront.OriginAccessIdentity(self, "OAI")
-        bucket.grant_read(oai)
-
         # CloudFront ディストリビューション
         distribution = cloudfront.Distribution(
             self,
             "Distribution",
             default_behavior=cloudfront.BehaviorOptions(
-                origin=origins.S3Origin(bucket, origin_access_identity=oai),
+                origin=origins.S3BucketOrigin.with_origin_access_control(bucket),
                 viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                 cache_policy=cloudfront.CachePolicy.CACHING_OPTIMIZED,
-                function_associations=[
-                    cloudfront.FunctionAssociation(
-                        function=cf_function,
-                        event_type=cloudfront.FunctionEventType.VIEWER_REQUEST,
-                    )
-                ],
             ),
             additional_behaviors={
                 "/api/login": cloudfront.BehaviorOptions(
                     origin=origins.HttpOrigin(
-                        # Lambda Function URLのドメインを抽出
-                        domain_name=self._extract_domain(auth_url.url),
+                        # Lambda Function URL (https://xxx.on.aws/) からドメイン部分を抽出
+                        domain_name=Fn.select(2, Fn.split("/", auth_url.url)),
                     ),
                     viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                     cache_policy=cloudfront.CachePolicy.CACHING_DISABLED,
@@ -93,7 +90,7 @@ class MusicSiteStack(Stack):
                     allowed_methods=cloudfront.AllowedMethods.ALLOW_ALL,
                 ),
                 "/music/*": cloudfront.BehaviorOptions(
-                    origin=origins.S3Origin(bucket, origin_access_identity=oai),
+                    origin=origins.S3BucketOrigin.with_origin_access_control(bucket),
                     viewer_protocol_policy=cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
                     cache_policy=cloudfront.CachePolicy.CACHING_OPTIMIZED,
                     function_associations=[
@@ -131,9 +128,3 @@ class MusicSiteStack(Stack):
             value=f"https://{distribution.distribution_domain_name}",
         )
         CfnOutput(self, "AuthFunctionUrl", value=auth_url.url)
-
-    @staticmethod
-    def _extract_domain(url: str) -> str:
-        """https://xxx.lambda-url.ap-northeast-1.on.aws/ → xxx.lambda-url.ap-northeast-1.on.aws"""
-        from urllib.parse import urlparse
-        return urlparse(url).hostname or url

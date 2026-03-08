@@ -7,6 +7,9 @@ dependencies = [
     "boto3>=1.35",
     "google-genai>=1.0",
     "pillow>=11.0",
+    "aws-cdk-lib>=2.170.0",
+    "constructs>=10.0.0",
+    "python-dotenv>=1.2.2",
 ]
 
 [tool.hatch.build.targets.wheel]

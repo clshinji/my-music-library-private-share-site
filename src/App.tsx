@@ -144,7 +144,7 @@ function App() {
       )}
 
       {/* メインコンテンツ */}
-      <div className="flex-1 min-w-0 flex flex-col pb-14 md:pb-0">
+      <div className={`flex-1 min-w-0 flex flex-col ${audio.currentTrack ? "pb-24" : "pb-14"} md:pb-0`}>
         {/* ホームビュー */}
         <div className={`flex-1 overflow-y-auto ${mobileView === "player" && !currentAlbum ? "" : mobileView === "player" ? "hidden md:block" : ""}`}>
           <div className="p-4 md:p-8">
