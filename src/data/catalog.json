@@ -1,0 +1,1026 @@
+{
+  "artists": [
+    {
+      "id": "87e7879c02d1",
+      "sortKey": 1,
+      "name": "名取交響吹奏楽団（n響）",
+      "albums": [
+        {
+          "id": "f7092a3e2a4b",
+          "name": "2009_第57回全日本吹奏楽コンクール全国大会",
+          "artistId": "87e7879c02d1",
+          "artworkPath": "/artwork/f7092a3e2a4b.jpg",
+          "tracks": [
+            {
+              "id": "c75197656f63",
+              "trackNumber": 1,
+              "title": "アナウンス",
+              "fileName": "01 アナウンス.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2009_第57回全日本吹奏楽コンクール全国大会/01 アナウンス.m4a",
+              "duration": 41.24,
+              "albumId": "f7092a3e2a4b",
+              "artistId": "87e7879c02d1"
+            },
+            {
+              "id": "c49aab92e1e9",
+              "trackNumber": 2,
+              "title": "課題曲5",
+              "fileName": "02 課題曲5.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2009_第57回全日本吹奏楽コンクール全国大会/02 課題曲5.m4a",
+              "duration": 239.24,
+              "albumId": "f7092a3e2a4b",
+              "artistId": "87e7879c02d1"
+            },
+            {
+              "id": "d9123fb9d348",
+              "trackNumber": 3,
+              "title": "宇宙の音楽",
+              "fileName": "03 宇宙の音楽.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2009_第57回全日本吹奏楽コンクール全国大会/03 宇宙の音楽.m4a",
+              "duration": 474.82,
+              "albumId": "f7092a3e2a4b",
+              "artistId": "87e7879c02d1"
+            }
+          ]
+        },
+        {
+          "id": "a21df11e5e3a",
+          "name": "2010_第58回全日本吹奏楽コンクール全国大会",
+          "artistId": "87e7879c02d1",
+          "artworkPath": "/artwork/a21df11e5e3a.jpg",
+          "tracks": [
+            {
+              "id": "ca09e880eab8",
+              "trackNumber": 1,
+              "title": "アナウンス",
+              "fileName": "01 アナウンス.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2010_第58回全日本吹奏楽コンクール全国大会/01 アナウンス.m4a",
+              "duration": 34.72,
+              "albumId": "a21df11e5e3a",
+              "artistId": "87e7879c02d1"
+            },
+            {
+              "id": "c682f180d6fc",
+              "trackNumber": 2,
+              "title": "オーディナリー・マーチ",
+              "fileName": "02 オーディナリー・マーチ.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2010_第58回全日本吹奏楽コンクール全国大会/02 オーディナリー・マーチ.m4a",
+              "duration": 208.52,
+              "albumId": "a21df11e5e3a",
+              "artistId": "87e7879c02d1"
+            },
+            {
+              "id": "0cf3bc8b02e5",
+              "trackNumber": 3,
+              "title": "パガニーニの主題による狂詩曲",
+              "fileName": "03 パガニーニの主題による狂詩曲.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2010_第58回全日本吹奏楽コンクール全国大会/03 パガニーニの主題による狂詩曲.m4a",
+              "duration": 501.51,
+              "albumId": "a21df11e5e3a",
+              "artistId": "87e7879c02d1"
+            }
+          ]
+        },
+        {
+          "id": "e551f97705db",
+          "name": "2012_第60回全日本吹奏楽コンクール全国大会",
+          "artistId": "87e7879c02d1",
+          "artworkPath": "/artwork/e551f97705db.jpg",
+          "tracks": [
+            {
+              "id": "26c73eb9b1cd",
+              "trackNumber": 1,
+              "title": "課題曲（Ⅲ）吹奏楽のための綺想曲「じゅげむ」",
+              "fileName": "01 課題曲（Ⅲ）吹奏楽のための綺想曲「じゅげむ」.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2012_第60回全日本吹奏楽コンクール全国大会/01 課題曲（Ⅲ）吹奏楽のための綺想曲「じゅげむ」.m4a",
+              "duration": 273.88,
+              "albumId": "e551f97705db",
+              "artistId": "87e7879c02d1"
+            },
+            {
+              "id": "bf2f74aad70d",
+              "trackNumber": 2,
+              "title": "「エニグマ変奏曲」より",
+              "fileName": "02 「エニグマ変奏曲」より.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2012_第60回全日本吹奏楽コンクール全国大会/02 「エニグマ変奏曲」より.m4a",
+              "duration": 468.81,
+              "albumId": "e551f97705db",
+              "artistId": "87e7879c02d1"
+            }
+          ]
+        },
+        {
+          "id": "4b0ee291d00d",
+          "name": "2013_第61回全日本吹奏楽コンクール全国大会",
+          "artistId": "87e7879c02d1",
+          "artworkPath": "/artwork/4b0ee291d00d.jpg",
+          "tracks": [
+            {
+              "id": "d9f5975ee7cb",
+              "trackNumber": 1,
+              "title": "課題曲 復興への序曲「夢の明日へ」",
+              "fileName": "01 課題曲 復興への序曲「夢の明日へ」.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2013_第61回全日本吹奏楽コンクール全国大会/01 課題曲 復興への序曲「夢の明日へ」.m4a",
+              "duration": 283.4,
+              "albumId": "4b0ee291d00d",
+              "artistId": "87e7879c02d1"
+            },
+            {
+              "id": "1fa2949e7d22",
+              "trackNumber": 2,
+              "title": "自由曲 ドラゴンの年",
+              "fileName": "02 自由曲 ドラゴンの年.m4a",
+              "format": "m4a",
+              "s3Key": "music/01_名取交響吹奏楽団（n響）/2013_第61回全日本吹奏楽コンクール全国大会/02 自由曲 ドラゴンの年.m4a",
+              "duration": 468.72,
+              "albumId": "4b0ee291d00d",
+              "artistId": "87e7879c02d1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0aff2a495277",
+      "sortKey": 2,
+      "name": "シエナ・ウィンド・オーケストラ",
+      "albums": [
+        {
+          "id": "61f552e4a73f",
+          "name": "Disney on Brass",
+          "artistId": "0aff2a495277",
+          "artworkPath": "/artwork/61f552e4a73f.jpg",
+          "tracks": [
+            {
+              "id": "97b3f5e18fa6",
+              "trackNumber": 1,
+              "title": "メリー・ポピンズ-メイン・タイトル",
+              "fileName": "01 メリー・ポピンズ-メイン・タイトル.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/01 メリー・ポピンズ-メイン・タイトル.m4a",
+              "duration": 241.39,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "0318535b2645",
+              "trackNumber": 2,
+              "title": "パイレーツ・オブ・カリビアン_呪われた海賊たち",
+              "fileName": "02 パイレーツ・オブ・カリビアン_呪われた海賊たち.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/02 パイレーツ・オブ・カリビアン_呪われた海賊たち.m4a",
+              "duration": 573.07,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "9b4780297612",
+              "trackNumber": 3,
+              "title": "Mr.インクレディブル-栄光の日々",
+              "fileName": "03 Mr.インクレディブル-栄光の日々.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/03 Mr.インクレディブル-栄光の日々.m4a",
+              "duration": 230.99,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "bc1febe24f0e",
+              "trackNumber": 4,
+              "title": "Mr.インクレディブル-スーパー・クレジット",
+              "fileName": "04 Mr.インクレディブル-スーパー・クレジット.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/04 Mr.インクレディブル-スーパー・クレジット.m4a",
+              "duration": 298.96,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "f5aeaa664c1b",
+              "trackNumber": 5,
+              "title": "カーズ-レース直前、沸き上がる会場",
+              "fileName": "05 カーズ-レース直前、沸き上がる会場.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/05 カーズ-レース直前、沸き上がる会場.m4a",
+              "duration": 88.89,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "b08d79744764",
+              "trackNumber": 6,
+              "title": "カーズ-別れの時",
+              "fileName": "06 カーズ-別れの時.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/06 カーズ-別れの時.m4a",
+              "duration": 157.38,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "afc196c27b1d",
+              "trackNumber": 7,
+              "title": "カーズ-本当の勝利",
+              "fileName": "07 カーズ-本当の勝利.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/07 カーズ-本当の勝利.m4a",
+              "duration": 202.57,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "7fd1216d9e4b",
+              "trackNumber": 8,
+              "title": "ディズニー・メドレー",
+              "fileName": "08 ディズニー・メドレー.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/08 ディズニー・メドレー.m4a",
+              "duration": 540.89,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "a91544cfa2e0",
+              "trackNumber": 9,
+              "title": "メリー・ポピンズ-踊ろう、調子よく",
+              "fileName": "09 メリー・ポピンズ-踊ろう、調子よく.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/09 メリー・ポピンズ-踊ろう、調子よく.m4a",
+              "duration": 308.38,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "05382cb7ca39",
+              "trackNumber": 10,
+              "title": "ウォルト・ディズニー・ソングブック",
+              "fileName": "10 ウォルト・ディズニー・ソングブック.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/Disney on Brass/10 ウォルト・ディズニー・ソングブック.m4a",
+              "duration": 847.06,
+              "albumId": "61f552e4a73f",
+              "artistId": "0aff2a495277"
+            }
+          ]
+        },
+        {
+          "id": "00c6f3fb06ed",
+          "name": "バーンスタイン・オン・ブラス",
+          "artistId": "0aff2a495277",
+          "artworkPath": "/artwork/00c6f3fb06ed.jpg",
+          "tracks": [
+            {
+              "id": "d5a377354815",
+              "trackNumber": 1,
+              "title": "《キャンディード》序曲",
+              "fileName": "01 《キャンディード》序曲.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/01 《キャンディード》序曲.m4a",
+              "duration": 262.94,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "cf63631fe6cf",
+              "trackNumber": 2,
+              "title": "《ウエスト・サイド・ストーリー》よりシンフォニック・ダンス　プロローグ",
+              "fileName": "02 《ウエスト・サイド・ストーリー》よりシンフォニック・ダンス　プロローグ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/02 《ウエスト・サイド・ストーリー》よりシンフォニック・ダンス　プロローグ.m4a",
+              "duration": 254.21,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "43af13ed9d35",
+              "trackNumber": 3,
+              "title": "サムウェア",
+              "fileName": "03 サムウェア.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/03 サムウェア.m4a",
+              "duration": 256.86,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "d9eb47d74233",
+              "trackNumber": 4,
+              "title": "スケルツォ",
+              "fileName": "04 スケルツォ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/04 スケルツォ.m4a",
+              "duration": 84.71,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "148d7da409fe",
+              "trackNumber": 5,
+              "title": "マンボ",
+              "fileName": "05 マンボ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/05 マンボ.m4a",
+              "duration": 138.07,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "55847d1f9aee",
+              "trackNumber": 6,
+              "title": "チャ_チャ",
+              "fileName": "06 チャ_チャ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/06 チャ_チャ.m4a",
+              "duration": 57.56,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "13aa4d8a4482",
+              "trackNumber": 7,
+              "title": "ミーティング・シーン",
+              "fileName": "07 ミーティング・シーン.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/07 ミーティング・シーン.m4a",
+              "duration": 44.56,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "ff40c70a5888",
+              "trackNumber": 8,
+              "title": "クール、フーガ",
+              "fileName": "08 クール、フーガ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/08 クール、フーガ.m4a",
+              "duration": 202.71,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "d500754dd547",
+              "trackNumber": 9,
+              "title": "ランブル",
+              "fileName": "09 ランブル.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/09 ランブル.m4a",
+              "duration": 131.75,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "9825cbd9485e",
+              "trackNumber": 10,
+              "title": "フィナーレ",
+              "fileName": "10 フィナーレ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/10 フィナーレ.m4a",
+              "duration": 204.92,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "6f763309a515",
+              "trackNumber": 11,
+              "title": "プレリュード、フーガ&リフス　プレリュード",
+              "fileName": "11 プレリュード、フーガ&リフス　プレリュード.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/11 プレリュード、フーガ&リフス　プレリュード.m4a",
+              "duration": 109.32,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "a58913b4bced",
+              "trackNumber": 12,
+              "title": "フーガ",
+              "fileName": "12 フーガ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/12 フーガ.m4a",
+              "duration": 109.97,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "0a968559028f",
+              "trackNumber": 13,
+              "title": "リフス",
+              "fileName": "13 リフス.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/13 リフス.m4a",
+              "duration": 278.62,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "2da3776b9dd7",
+              "trackNumber": 14,
+              "title": "《オン・ザ・タウン》より ３つのダンス・エピソード　I. ザ・グレート・ラヴァー",
+              "fileName": "14 《オン・ザ・タウン》より ３つのダンス・エピソード　I. ザ・グレート・ラヴァー.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/14 《オン・ザ・タウン》より ３つのダンス・エピソード　I. ザ・グレート・ラヴァー.m4a",
+              "duration": 110.69,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "0e87bde4ed5b",
+              "trackNumber": 15,
+              "title": "II. ロンリー・タウン_パ・ド・ドゥ",
+              "fileName": "15 II. ロンリー・タウン_パ・ド・ドゥ.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/15 II. ロンリー・タウン_パ・ド・ドゥ.m4a",
+              "duration": 210.12,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "ab5ce4df3513",
+              "trackNumber": 16,
+              "title": "III. タイムズ・スクエア_1944",
+              "fileName": "16 III. タイムズ・スクエア_1944.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/16 III. タイムズ・スクエア_1944.m4a",
+              "duration": 295.52,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "ab0bfd087056",
+              "trackNumber": 17,
+              "title": "スラヴァ!",
+              "fileName": "17 スラヴァ!.m4a",
+              "format": "m4a",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/バーンスタイン・オン・ブラス/17 スラヴァ!.m4a",
+              "duration": 206.26,
+              "albumId": "00c6f3fb06ed",
+              "artistId": "0aff2a495277"
+            }
+          ]
+        },
+        {
+          "id": "1aa5cd56a8ea",
+          "name": "ブラスの祭典２",
+          "artistId": "0aff2a495277",
+          "artworkPath": "/artwork/1aa5cd56a8ea.jpg",
+          "tracks": [
+            {
+              "id": "1db0ebd7e8e5",
+              "trackNumber": 1,
+              "title": "オリンピック・ファンファーレ＆テーマ",
+              "fileName": "01 オリンピック・ファンファーレ＆テーマ.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/01 オリンピック・ファンファーレ＆テーマ.mp3",
+              "duration": 281.52,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "7a3ab35f5198",
+              "trackNumber": 2,
+              "title": "２つの交響的断章　Ⅱ．第２楽章",
+              "fileName": "02 ２つの交響的断章　Ⅱ．第２楽章.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/02 ２つの交響的断章　Ⅱ．第２楽章.mp3",
+              "duration": 208.25,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "d2d818fafacc",
+              "trackNumber": 3,
+              "title": "プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~2",
+              "fileName": "03 プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~2.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/03 プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~2.mp3",
+              "duration": 110.01,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "94b7d741fe55",
+              "trackNumber": 4,
+              "title": "プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~1",
+              "fileName": "04 プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~1.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/04 プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~1.mp3",
+              "duration": 110.1,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "e40de5fd8b57",
+              "trackNumber": 5,
+              "title": "プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~3",
+              "fileName": "05 プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~3.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/05 プレリュード、フーガとリフス～ソロ・クラリネットとジャズ・~3.mp3",
+              "duration": 278.65,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "1cf9e5cfa526",
+              "trackNumber": 6,
+              "title": "エルザの大聖堂への行列～歌劇《ローエングリス》より",
+              "fileName": "06 エルザの大聖堂への行列～歌劇《ローエングリス》より.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/06 エルザの大聖堂への行列～歌劇《ローエングリス》より.mp3",
+              "duration": 416.16,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "f390b166a588",
+              "trackNumber": 7,
+              "title": "交響詩《ローマの祭り》　チルチェンセス",
+              "fileName": "07 交響詩《ローマの祭り》　チルチェンセス.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/07 交響詩《ローマの祭り》　チルチェンセス.mp3",
+              "duration": 290.18,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "2ae175910633",
+              "trackNumber": 8,
+              "title": "交響詩《ローマの祭り》　５０年祭",
+              "fileName": "08 交響詩《ローマの祭り》　５０年祭.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/08 交響詩《ローマの祭り》　５０年祭.mp3",
+              "duration": 431.75,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "5b312ce825c1",
+              "trackNumber": 9,
+              "title": "交響詩《ローマの祭り》　１０月祭",
+              "fileName": "09 交響詩《ローマの祭り》　１０月祭.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/09 交響詩《ローマの祭り》　１０月祭.mp3",
+              "duration": 450.31,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "61c8b3eacfb2",
+              "trackNumber": 10,
+              "title": "交響詩《ローマの祭り》　主顕祭",
+              "fileName": "10 交響詩《ローマの祭り》　主顕祭.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/10 交響詩《ローマの祭り》　主顕祭.mp3",
+              "duration": 320.18,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            },
+            {
+              "id": "83959c659193",
+              "trackNumber": 11,
+              "title": "ロンドンデリーの歌　《アイルランド、デリー州の調べ》",
+              "fileName": "11 ロンドンデリーの歌　《アイルランド、デリー州の調べ》.mp3",
+              "format": "mp3",
+              "s3Key": "music/02_シエナ・ウィンド・オーケストラ/ブラスの祭典２/11 ロンドンデリーの歌　《アイルランド、デリー州の調べ》.mp3",
+              "duration": 236.23,
+              "albumId": "1aa5cd56a8ea",
+              "artistId": "0aff2a495277"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "92b3af3a811b",
+      "sortKey": 3,
+      "name": "東北方面陸上自衛隊",
+      "albums": [
+        {
+          "id": "1ac1974b0bac",
+          "name": "第30回青少年コンサート",
+          "artistId": "92b3af3a811b",
+          "artworkPath": "/artwork/1ac1974b0bac.jpg",
+          "tracks": [
+            {
+              "id": "adbb1726cca4",
+              "trackNumber": 1,
+              "title": "ライド",
+              "fileName": "01 ライド.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/01 ライド.mp3",
+              "duration": 226.6,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "2144a2bdc6fe",
+              "trackNumber": 2,
+              "title": "架空の伝説のための前奏曲",
+              "fileName": "02 架空の伝説のための前奏曲.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/02 架空の伝説のための前奏曲.mp3",
+              "duration": 329.91,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "15dacd319f6b",
+              "trackNumber": 3,
+              "title": "海へ…吹奏楽の為に",
+              "fileName": "03 海へ…吹奏楽の為に.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/03 海へ…吹奏楽の為に.mp3",
+              "duration": 327.85,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "9f5a40e006cd",
+              "trackNumber": 4,
+              "title": "たなばた",
+              "fileName": "04 たなばた.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/04 たなばた.mp3",
+              "duration": 498.43,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "08c11a130f3a",
+              "trackNumber": 5,
+              "title": "アイヴァンホー Ⅰ騎士道のおきて",
+              "fileName": "05 アイヴァンホー Ⅰ騎士道のおきて.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/05 アイヴァンホー Ⅰ騎士道のおきて.mp3",
+              "duration": 178.17,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "63c4bad4ba25",
+              "trackNumber": 6,
+              "title": "アイヴァンホー Ⅱ忠義か愛か",
+              "fileName": "06 アイヴァンホー Ⅱ忠義か愛か.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/06 アイヴァンホー Ⅱ忠義か愛か.mp3",
+              "duration": 154.06,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "2a8fc79d3f0d",
+              "trackNumber": 7,
+              "title": "アイヴァンホー Ⅲ戦いとフィナーレ",
+              "fileName": "07 アイヴァンホー Ⅲ戦いとフィナーレ.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/07 アイヴァンホー Ⅲ戦いとフィナーレ.mp3",
+              "duration": 171.4,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "6d164f38049c",
+              "trackNumber": 8,
+              "title": "チューバ協奏曲より第１楽章",
+              "fileName": "08 チューバ協奏曲より第１楽章.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/08 チューバ協奏曲より第１楽章.mp3",
+              "duration": 397.04,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "b14d273a6fe2",
+              "trackNumber": 9,
+              "title": "スパルタクスとフリギアのアダージョ",
+              "fileName": "09 スパルタクスとフリギアのアダージョ.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/09 スパルタクスとフリギアのアダージョ.mp3",
+              "duration": 353.44,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "37ad810cf980",
+              "trackNumber": 10,
+              "title": "交響曲第５番ニ短調「革命」作品４７より　終楽章 アレグロ・ノン・トロッポ",
+              "fileName": "10 交響曲第５番ニ短調「革命」作品４７より　終楽章 アレグロ・ノン・トロッポ.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/10 交響曲第５番ニ短調「革命」作品４７より　終楽章 アレグロ・ノン・トロッポ.mp3",
+              "duration": 755.98,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "fc68ca839038",
+              "trackNumber": 11,
+              "title": "交響的間奏曲",
+              "fileName": "11 交響的間奏曲.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第30回青少年コンサート/11 交響的間奏曲.mp3",
+              "duration": 217.79,
+              "albumId": "1ac1974b0bac",
+              "artistId": "92b3af3a811b"
+            }
+          ]
+        },
+        {
+          "id": "bd0a4eeea4f6",
+          "name": "第31回青少年コンサート",
+          "artistId": "92b3af3a811b",
+          "artworkPath": "/artwork/bd0a4eeea4f6.jpg",
+          "tracks": [
+            {
+              "id": "51e9757aa8bf",
+              "trackNumber": 1,
+              "title": "ハンティンドン・セレブレーション",
+              "fileName": "01 ハンティンドン・セレブレーション.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/01 ハンティンドン・セレブレーション.mp3",
+              "duration": 323.52,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "34e08ccb19ac",
+              "trackNumber": 2,
+              "title": "ピッコロマーチ",
+              "fileName": "02 ピッコロマーチ.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/02 ピッコロマーチ.mp3",
+              "duration": 171.47,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "f310b21f6a5c",
+              "trackNumber": 3,
+              "title": "コンサートマーチ",
+              "fileName": "03 コンサートマーチ.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/03 コンサートマーチ.mp3",
+              "duration": 181.22,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "2ebabeecf23b",
+              "trackNumber": 4,
+              "title": "交響組曲「野人」より　集い",
+              "fileName": "04 交響組曲「野人」より　集い.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/04 交響組曲「野人」より　集い.mp3",
+              "duration": 264.0,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "68d14b8764c7",
+              "trackNumber": 5,
+              "title": "交響組曲「野人」より　祭り",
+              "fileName": "05 交響組曲「野人」より　祭り.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/05 交響組曲「野人」より　祭り.mp3",
+              "duration": 294.2,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "ce0c823895aa",
+              "trackNumber": 6,
+              "title": "交響組曲「野人」より　踊り",
+              "fileName": "06 交響組曲「野人」より　踊り.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/06 交響組曲「野人」より　踊り.mp3",
+              "duration": 190.84,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "83fb63fffc59",
+              "trackNumber": 7,
+              "title": "クラリネット協奏曲　Carousel",
+              "fileName": "07 クラリネット協奏曲　Carousel.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/07 クラリネット協奏曲　Carousel.mp3",
+              "duration": 244.4,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "39bee2f575f8",
+              "trackNumber": 8,
+              "title": "クラリネット協奏曲　Cameo",
+              "fileName": "08 クラリネット協奏曲　Cameo.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/08 クラリネット協奏曲　Cameo.mp3",
+              "duration": 477.26,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "43c144bf1eeb",
+              "trackNumber": 9,
+              "title": "クラリネット協奏曲　Charabanc",
+              "fileName": "09 クラリネット協奏曲　Charabanc.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/09 クラリネット協奏曲　Charabanc.mp3",
+              "duration": 269.36,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "8419fdf695df",
+              "trackNumber": 10,
+              "title": "シェナンドーア",
+              "fileName": "10 シェナンドーア.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/10 シェナンドーア.mp3",
+              "duration": 383.07,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "0f5af8fbcee1",
+              "trackNumber": 11,
+              "title": "交響曲第４番より終楽章",
+              "fileName": "11 交響曲第４番より終楽章.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/11 交響曲第４番より終楽章.mp3",
+              "duration": 562.8,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "991ec18e67b9",
+              "trackNumber": 12,
+              "title": "貴歌劇「メリー・ウィドウ」より_ヴィリアの歌_",
+              "fileName": "12 貴歌劇「メリー・ウィドウ」より_ヴィリアの歌_.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/12 貴歌劇「メリー・ウィドウ」より_ヴィリアの歌_.mp3",
+              "duration": 356.86,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            },
+            {
+              "id": "ed437c9a128b",
+              "trackNumber": 13,
+              "title": "行進曲「我らが指揮官」",
+              "fileName": "13 行進曲「我らが指揮官」.mp3",
+              "format": "mp3",
+              "s3Key": "music/03_東北方面陸上自衛隊/第31回青少年コンサート/13 行進曲「我らが指揮官」.mp3",
+              "duration": 198.45,
+              "albumId": "bd0a4eeea4f6",
+              "artistId": "92b3af3a811b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4abd8002efb6",
+      "sortKey": 4,
+      "name": "航空自衛隊西部航空音楽隊",
+      "albums": [
+        {
+          "id": "2b35b59fca82",
+          "name": "CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」",
+          "artistId": "4abd8002efb6",
+          "artworkPath": "/artwork/2b35b59fca82.jpg",
+          "tracks": [
+            {
+              "id": "d25ffc8244d6",
+              "trackNumber": 1,
+              "title": "イントラーダ「S-S-S」",
+              "fileName": "01 イントラーダ「S-S-S」.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/01 イントラーダ「S-S-S」.mp3",
+              "duration": 246.25,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "6204657e8d57",
+              "trackNumber": 2,
+              "title": "ジェリコ",
+              "fileName": "02 ジェリコ.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/02 ジェリコ.mp3",
+              "duration": 644.46,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "a475c59ea9cd",
+              "trackNumber": 3,
+              "title": "シャックルフォード・バンクス",
+              "fileName": "03 シャックルフォード・バンクス.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/03 シャックルフォード・バンクス.mp3",
+              "duration": 228.45,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "682132ad017f",
+              "trackNumber": 4,
+              "title": "民衆を導く自由の女神",
+              "fileName": "04 民衆を導く自由の女神.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/04 民衆を導く自由の女神.mp3",
+              "duration": 461.71,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "7a239e595fbf",
+              "trackNumber": 5,
+              "title": "スクーティン・オン・ハードロック",
+              "fileName": "05 スクーティン・オン・ハードロック.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/05 スクーティン・オン・ハードロック.mp3",
+              "duration": 530.88,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "71e5c46b0b1a",
+              "trackNumber": 6,
+              "title": "Legenda i Regeneracja",
+              "fileName": "06 Legenda i Regeneracja.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/06 Legenda i Regeneracja.mp3",
+              "duration": 452.92,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "0f513ce6f149",
+              "trackNumber": 7,
+              "title": "人々の力　～そして彼らは空に向かう～",
+              "fileName": "07 人々の力　～そして彼らは空に向かう～.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/07 人々の力　～そして彼らは空に向かう～.mp3",
+              "duration": 417.09,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "335e1be01613",
+              "trackNumber": 8,
+              "title": "シー・トリロジー",
+              "fileName": "08 シー・トリロジー.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/08 シー・トリロジー.mp3",
+              "duration": 420.42,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "2a6a8e9fc62b",
+              "trackNumber": 9,
+              "title": "さくらの花が咲く頃",
+              "fileName": "09 さくらの花が咲く頃.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/09 さくらの花が咲く頃.mp3",
+              "duration": 440.05,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "422860b1db1b",
+              "trackNumber": 10,
+              "title": "ラスト・バトル",
+              "fileName": "10 ラスト・バトル.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/10 ラスト・バトル.mp3",
+              "duration": 201.18,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            },
+            {
+              "id": "ba97ce026f59",
+              "trackNumber": 11,
+              "title": "暗黒から光へ",
+              "fileName": "11 暗黒から光へ.mp3",
+              "format": "mp3",
+              "s3Key": "music/04_航空自衛隊西部航空音楽隊/CAFUA Selection 2004 吹奏楽コンクール自由曲選「ジェリコ」/11 暗黒から光へ.mp3",
+              "duration": 526.71,
+              "albumId": "2b35b59fca82",
+              "artistId": "4abd8002efb6"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-03-09T00:13:26.631402"
+}

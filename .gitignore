@@ -5,5 +5,17 @@ music-library/*
 # 環境変数
 .env
 
+# Node.js
+node_modules/
+dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# CDK
+infra/cdk.out/
+
 # その他
 .DS_Store
