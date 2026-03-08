@@ -1,0 +1,9 @@
+# 音楽ライブラリ（大容量のため除外）
+music-library/*
+!music-library/.gitkeep
+
+# 環境変数
+.env
+
+# その他
+.DS_Store
