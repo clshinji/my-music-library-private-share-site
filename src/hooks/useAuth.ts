@@ -16,15 +16,15 @@ export function useAuth() {
         setIsAuthenticated(true);
         return true;
       }
-      return false;
     } catch {
-      // ローカル開発時: パスワードチェックをスキップ
-      if (window.location.hostname === "localhost") {
-        setIsAuthenticated(true);
-        return true;
-      }
-      return false;
+      // ネットワークエラー（fetch自体の失敗）
     }
+    // ローカル開発時: API未接続のためパスワードチェックをスキップ
+    if (window.location.hostname === "localhost") {
+      setIsAuthenticated(true);
+      return true;
+    }
+    return false;
   }, []);
 
   return { isAuthenticated, login };

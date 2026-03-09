@@ -157,10 +157,6 @@ function App() {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
               {catalog.artists.flatMap((artist) =>
                 artist.albums.map((album) => {
-                  const artworkSrc = album.artworkPath.replace(
-                    /^\/artwork\//,
-                    "/src/assets/artwork/"
-                  );
                   return (
                     <button
                       key={album.id}
@@ -168,7 +164,7 @@ function App() {
                       className="bg-bg-secondary hover:bg-bg-tertiary rounded-xl p-3 text-left transition-colors group"
                     >
                       <div className="aspect-square rounded-lg overflow-hidden mb-3 bg-bg-tertiary relative">
-                        <img src={artworkSrc} alt={album.name} className="w-full h-full object-cover" />
+                        <img src={album.artworkPath} alt={album.name} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
                           <svg width="40" height="40" fill="white" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z" />

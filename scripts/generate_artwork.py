@@ -14,7 +14,7 @@ import io
 
 MUSIC_DIR = Path(__file__).parent.parent / "music-library"
 CATALOG_PATH = Path(__file__).parent.parent / "src" / "data" / "catalog.json"
-ARTWORK_DIR = Path(__file__).parent.parent / "src" / "assets" / "artwork"
+ARTWORK_DIR = Path(__file__).parent.parent / "public" / "artwork"
 ARTWORK_SIZE = (300, 300)
 
 

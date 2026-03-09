@@ -13,7 +13,7 @@ import boto3
 PROJECT_ROOT = Path(__file__).parent.parent
 MUSIC_DIR = PROJECT_ROOT / "music-library"
 DIST_DIR = PROJECT_ROOT / "dist"
-ARTWORK_DIR = PROJECT_ROOT / "src" / "assets" / "artwork"
+ARTWORK_DIR = PROJECT_ROOT / "public" / "artwork"
 
 PROFILE = os.environ.get("AWS_PROFILE", "clshinji")
 

@@ -23,16 +23,11 @@ export default function NowPlaying({ track, album, artist, isFavorite, onToggleF
     );
   }
 
-  const artworkSrc = album.artworkPath.replace(
-    /^\/artwork\//,
-    "/src/assets/artwork/"
-  );
-
   return (
     <div className="flex flex-col items-center gap-6 py-8">
       <div className="w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-2xl">
         <img
-          src={artworkSrc}
+          src={album.artworkPath}
           alt={album.name}
           className="w-full h-full object-cover"
           onError={(e) => {

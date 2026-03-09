@@ -68,10 +68,7 @@ export default function RecommendedPlaylists({ artists, onPlayPlaylist }: Props)
         {PLAYLIST_DEFS.map((def, i) => {
           const result = def.getTracks(artists);
           if (!result) return null;
-          const artworkSrc = result.album?.artworkPath?.replace(
-            /^\/artwork\//,
-            "/src/assets/artwork/"
-          );
+          const artworkSrc = result.album?.artworkPath;
           return (
             <button
               key={i}

@@ -50,7 +50,7 @@ def handler(event, context):
         "statusCode": 200,
         "headers": {
             **headers,
-            "Set-Cookie": f"music_auth={cookie_value}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=2592000{domain_part}",
+            "Set-Cookie": f"music_auth={cookie_value}; Path=/; Secure; SameSite=Lax; Max-Age=2592000{domain_part}",
         },
         "body": json.dumps({"ok": True}),
     }
