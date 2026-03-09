@@ -73,9 +73,9 @@ export default function RecommendedPlaylists({ artists, onPlayPlaylist }: Props)
             <button
               key={i}
               onClick={() => onPlayPlaylist(result.tracks, result.startIndex)}
-              className="flex items-center gap-3 bg-bg-secondary hover:bg-bg-tertiary rounded-lg p-3 text-left transition-colors group"
+              className="flex items-center gap-3 bg-bg-secondary hover:bg-bg-tertiary rounded-lg p-3 text-left transition-all duration-200 group hover:scale-[1.01] hover:shadow-lg"
             >
-              <div className="w-12 h-12 rounded overflow-hidden shrink-0 bg-bg-tertiary">
+              <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 bg-bg-tertiary">
                 {artworkSrc && (
                   <img src={artworkSrc} alt="" className="w-full h-full object-cover" />
                 )}
@@ -84,15 +84,16 @@ export default function RecommendedPlaylists({ artists, onPlayPlaylist }: Props)
                 <p className="font-medium text-sm truncate">{def.name}</p>
                 <p className="text-xs text-text-secondary truncate">{def.description}</p>
               </div>
-              <svg
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                className="text-accent opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
+              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shrink-0 shadow-lg shadow-accent-glow">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="white"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </button>
           );
         })}

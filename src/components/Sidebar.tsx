@@ -13,6 +13,16 @@ export default function Sidebar({ artists, currentTrack, onPlayTrack, onClose }:
   const [expandedArtists, setExpandedArtists] = useState<Set<string>>(new Set());
   const [expandedAlbums, setExpandedAlbums] = useState<Set<string>>(new Set());
 
+  const currentArtistId = (() => {
+    if (!currentTrack) return null;
+    for (const artist of artists) {
+      for (const album of artist.albums) {
+        if (album.tracks.some((t) => t.id === currentTrack.id)) return artist.id;
+      }
+    }
+    return null;
+  })();
+
   const toggleArtist = (id: string) => {
     setExpandedArtists((prev) => {
       const next = new Set(prev);
@@ -31,7 +41,7 @@ export default function Sidebar({ artists, currentTrack, onPlayTrack, onClose }:
 
   return (
     <div className="h-full flex flex-col bg-bg-secondary">
-      <div className="flex items-center justify-between p-4 border-b border-bg-tertiary">
+      <div className="flex items-center justify-between p-4 border-b border-bg-tertiary bg-gradient-to-b from-bg-elevated/30 to-transparent">
         <h2 className="text-lg font-bold">ライブラリ</h2>
         {onClose && (
           <button onClick={onClose} className="text-text-secondary hover:text-text-primary p-1">
@@ -56,20 +66,28 @@ export default function Sidebar({ artists, currentTrack, onPlayTrack, onClose }:
               >
                 <path d="M6 3l6 5-6 5V3z" />
               </svg>
-              <span className="font-medium truncate">{artist.name}</span>
+              <span className="font-medium truncate flex items-center gap-1.5">
+                {currentArtistId === artist.id && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                )}
+                {artist.name}
+              </span>
               <span className="text-text-secondary text-xs ml-auto shrink-0">
                 {artist.albums.reduce((n, a) => n + a.tracks.length, 0)}曲
               </span>
             </button>
 
             {expandedArtists.has(artist.id) && (
-              <div className="ml-4">
+              <div className="ml-4 border-l-2 border-bg-tertiary">
                 {artist.albums.map((album) => (
                   <div key={album.id} className="mb-0.5">
                     <button
                       onClick={() => toggleAlbum(album.id)}
                       className="w-full flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-bg-hover text-left text-sm transition-colors"
                     >
+                      <div className="w-4 h-4 rounded overflow-hidden shrink-0 bg-bg-tertiary">
+                        <img src={album.artworkPath} alt="" className="w-full h-full object-cover" />
+                      </div>
                       <svg
                         width="14"
                         height="14"

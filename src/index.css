@@ -1,14 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #0f0f0f;
-  --color-bg-secondary: #1a1a1a;
-  --color-bg-tertiary: #252525;
-  --color-bg-hover: #2a2a2a;
-  --color-text-primary: #e1e1e1;
-  --color-text-secondary: #a0a0a0;
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #141418;
+  --color-bg-tertiary: #1e1e24;
+  --color-bg-hover: #26262e;
+  --color-bg-elevated: #2a2a34;
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #8888a0;
+  --color-text-muted: #55556a;
   --color-accent: #1db954;
   --color-accent-hover: #1ed760;
+  --color-accent-glow: #1db95440;
+  --color-accent-subtle: #1db95415;
+}
+
+@keyframes equalizer-1 {
+  0%, 100% { height: 40%; }
+  50% { height: 100%; }
+}
+@keyframes equalizer-2 {
+  0%, 100% { height: 100%; }
+  50% { height: 30%; }
+}
+@keyframes equalizer-3 {
+  0%, 100% { height: 60%; }
+  50% { height: 90%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 * {
@@ -21,7 +46,7 @@ html, body, #root {
   height: 100%;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -38,7 +63,7 @@ html, body, #root {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a3a;
+  background: var(--color-bg-elevated);
 }
 
 input[type="range"] {
@@ -53,9 +78,25 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--color-accent);
   cursor: pointer;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@media (pointer: coarse) {
+  input[type="range"]::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+  }
 }

@@ -19,8 +19,11 @@ export default function DownloadButton({ track }: Props) {
 
   return (
     <button
-      onClick={handleDownload}
-      className="p-2 rounded-full text-text-secondary hover:text-text-primary transition-colors"
+      onClick={(e) => {
+        e.stopPropagation();
+        handleDownload();
+      }}
+      className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full text-text-secondary hover:text-text-primary transition-colors"
       title="ダウンロード"
     >
       <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">

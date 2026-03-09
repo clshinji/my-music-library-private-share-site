@@ -7,8 +7,11 @@ interface Props {
 export default function FavoriteButton({ isFavorite, onToggle, size = 24 }: Props) {
   return (
     <button
-      onClick={onToggle}
-      className={`p-2 rounded-full transition-colors ${
+      onClick={(e) => {
+        e.stopPropagation();
+        onToggle();
+      }}
+      className={`p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-all active:scale-125 duration-150 ${
         isFavorite ? "text-accent" : "text-text-secondary hover:text-text-primary"
       }`}
       title={isFavorite ? "お気に入りから削除" : "お気に入りに追加"}

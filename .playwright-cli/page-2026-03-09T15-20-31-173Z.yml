@@ -1,0 +1,6 @@
+- generic [ref=e4]:
+  - img [ref=e7]
+  - heading "Music Library" [level=1] [ref=e9]
+  - paragraph [ref=e10]: パスワードを入力してください
+  - textbox "パスワード" [active] [ref=e11]
+  - button "ログイン" [disabled] [ref=e12]

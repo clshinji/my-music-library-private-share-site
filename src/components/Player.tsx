@@ -51,8 +51,8 @@ export default function Player({
   onPlayTrackAt,
 }: Props) {
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex-1 overflow-y-auto px-4 md:px-8">
+    <div className="flex flex-col flex-1 min-h-0">
+      <div className="flex-1 overflow-y-auto px-4 md:px-6 lg:px-8">
         <NowPlaying
           track={currentTrack}
           album={currentAlbum}
@@ -82,7 +82,7 @@ export default function Player({
       </div>
 
       {/* 固定プレイヤーバー */}
-      <div className="border-t border-bg-tertiary bg-bg-secondary px-4 py-3 space-y-2">
+      <div className="shrink-0 border-t border-bg-tertiary/50 backdrop-blur-lg bg-bg-secondary/90 px-4 md:px-6 lg:px-8 py-3 space-y-2">
         <ProgressBar
           currentTime={currentTime}
           duration={duration}

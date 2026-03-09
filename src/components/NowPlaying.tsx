@@ -25,7 +25,7 @@ export default function NowPlaying({ track, album, artist, isFavorite, onToggleF
 
   return (
     <div className="flex flex-col items-center gap-6 py-8">
-      <div className="w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-2xl">
+      <div className="w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.5)] hover:scale-[1.02] transition-transform duration-300">
         <img
           src={album.artworkPath}
           alt={album.name}
@@ -34,13 +34,13 @@ export default function NowPlaying({ track, album, artist, isFavorite, onToggleF
             (e.target as HTMLImageElement).src =
               "data:image/svg+xml," +
               encodeURIComponent(
-                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect fill="#252525" width="300" height="300"/><text fill="#666" font-size="48" text-anchor="middle" x="150" y="160">♪</text></svg>'
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300"><rect fill="#1e1e24" width="300" height="300"/><text fill="#55556a" font-size="48" text-anchor="middle" x="150" y="160">&#9835;</text></svg>'
               );
           }}
         />
       </div>
       <div className="text-center max-w-sm">
-        <h2 className="text-xl font-bold truncate">{track.title}</h2>
+        <h2 className="text-2xl font-bold truncate">{track.title}</h2>
         <p className="text-text-secondary mt-1 truncate">
           {artist?.name} — {getAlbumDisplayName(album.name)}
         </p>
