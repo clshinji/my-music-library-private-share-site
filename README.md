@@ -4,7 +4,7 @@
 
 ## 特徴
 
-- YouTube Music 風の UI で音楽を再生
+- 某音楽配信サイト風の UI で音楽を再生
 - アーティスト / アルバム / トラック単位のブラウジング
 - お気に入り（Like）機能
 - トラックダウンロード
@@ -57,6 +57,7 @@ cp .env.sample .env
 | `aws-profile-name` | AWS SSO プロファイル名 |
 | `site-password` | サイトのログインパスワード |
 | `hmac-secret` | Cookie 署名用シークレット（`openssl rand -hex 32` で生成） |
+| `google-studio-api-key` | Google AI Studio API キー（アートワーク AI 生成用、任意） |
 
 ### 2. 依存関係のインストール
 
@@ -97,8 +98,8 @@ uv run python scripts/generate_artwork.py --regenerate
 既にAI生成済みのアートワークを再生成したい場合に使用する。対象アルバムを柔軟に指定可能。
 
 ```bash
-# 全アルバムを再生成
-uv run python scripts/generate_artwork.py --regen-ai all
+# 全アルバムを再生成（引数なしは all と同等）
+uv run python scripts/generate_artwork.py --regen-ai
 
 # 埋め込みアートワークが無いアルバムのみ再生成
 uv run python scripts/generate_artwork.py --regen-ai no-embedded
@@ -120,19 +121,23 @@ uv run python scripts/generate_artwork.py --regen-ai id:aaa id:bbb name:Jazz
 | `id:<ID>` | アルバムIDの完全一致 |
 | `name:<文字列>` | アルバム名の部分一致（大文字小文字無視） |
 
-### モデル切り替え（`--model`）
+### モデル切り替え
 
-AI生成に使用するGeminiモデルを変更できる。`--regen-ai` との併用だけでなく、通常実行時にも有効。
+AI生成は2段階パイプラインで動作する。各段階のモデルを個別に変更可能。
+
+1. **音声分析モデル**（`--analysis-model`）: 音声クリップを聴いて画像生成プロンプトを生成
+2. **画像生成モデル**（`--image-model`）: 生成されたプロンプトからアートワーク画像を生成
 
 ```bash
-# デフォルト: gemini-3.1-flash-image-preview
-uv run python scripts/generate_artwork.py --regen-ai no-embedded --model gemini-2.0-flash-preview-image-generation
+# デフォルト: analysis=gemini-3.1-flash-lite-preview, image=gemini-3.1-flash-image-preview
+uv run python scripts/generate_artwork.py --regen-ai no-embedded --analysis-model gemini-2.5-flash --image-model gemini-3.1-flash-image-preview
 ```
 
 ### 処理フロー
 
 - **通常実行**: 既存アートワークはスキップし、未生成のアルバムのみ処理（埋め込み抽出 → AI生成 → プレースホルダー）
 - **`--regen-ai`**: 対象アルバムを1件ずつ「既存アートワーク削除 → 再生成」の順で処理。途中エラーでもアートワーク欠損を最小限にする
+- **AI生成パイプライン**: トラックタイトル抽出 → Web検索で背景情報取得 → 音声分析でプロンプト生成 → 画像生成
 
 ## デプロイ
 

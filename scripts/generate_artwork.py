@@ -18,6 +18,8 @@ from google import genai
 from google.genai import types
 import io
 
+from generate_catalog import parse_track_file
+
 
 MUSIC_DIR = Path(__file__).parent.parent / "music-library"
 CATALOG_PATH = Path(__file__).parent.parent / "src" / "data" / "catalog.json"
@@ -126,6 +128,39 @@ def select_representative_tracks(tracks: list[Path], max_count: int = 5) -> list
     return [tracks[int(i * step)] for i in range(max_count)]
 
 
+def extract_track_titles(album_dir: Path) -> list[str]:
+    """アルバムディレクトリ内の音楽ファイルからトラックタイトルを抽出"""
+    titles = []
+    for f in sorted(album_dir.iterdir()):
+        if f.suffix.lower() in (".m4a", ".mp3"):
+            _, title = parse_track_file(f.name)
+            titles.append(title)
+    return titles
+
+
+def search_album_context(album_name: str, artist_name: str, track_titles: list[str], client: genai.Client) -> str:
+    """Gemini + Google Search でアルバムの背景情報を取得。失敗時は空文字を返す。"""
+    try:
+        titles_str = ", ".join(track_titles[:8])
+        prompt = (
+            f"アルバム '{album_name}' / アーティスト '{artist_name}' について調べてください。\n"
+            f"収録曲: {titles_str}\n"
+            "このアルバムの音楽ジャンル、時代、雰囲気、テーマを簡潔に日本語で説明してください（3-5文）。"
+        )
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())],
+            ),
+        )
+        time.sleep(1)
+        return response.text or ""
+    except Exception as e:
+        print(f"    Web検索失敗（続行）: {e}")
+        return ""
+
+
 def extract_peak_clips(album_dir: Path) -> list[tuple[str, AudioSegment]]:
     """アルバムディレクトリから代表クリップを抽出"""
     tracks = sorted(
@@ -213,39 +248,112 @@ def resolve_regen_targets(
     return list(targets.values())
 
 
-def generate_ai_artwork(clips: list[tuple[str, AudioSegment]], album_name: str, artist_name: str, model: str = "gemini-3.1-flash-image-preview") -> bytes | None:
-    """Gemini APIで音楽の雰囲気からアートワークを生成"""
-    load_dotenv()
-    api_key = os.environ.get("google-studio-api-key")
-    if not api_key:
-        print("    google-studio-api-key が設定されていません")
-        return None
-
+def generate_image_prompt(
+    clips: list[tuple[str, AudioSegment]],
+    album_name: str,
+    artist_name: str,
+    track_titles: list[str] | None = None,
+    album_context: str = "",
+    client: genai.Client | None = None,
+    analysis_model: str = "gemini-3.1-flash-lite-preview",
+) -> str | None:
+    """音声クリップを分析し、画像生成用の詳細プロンプトを生成する"""
     wav_clips = clips_to_wav_bytes(clips)
     if not wav_clips:
         return None
 
-    client = genai.Client(api_key=api_key)
+    track_context = ""
+    if track_titles:
+        titles_str = ", ".join(track_titles[:8])
+        track_context = f"The album features tracks: {titles_str}. "
+
+    context_info = ""
+    if album_context:
+        context_info = f"Background about this album: {album_context} "
 
     contents = []
     prompt_text = (
         f"I'm sending you audio clips from the album '{album_name}' by '{artist_name}'. "
-        "Listen to the music and understand its mood, genre, and energy. "
-        "Then generate an album cover artwork image that captures the essence of this music. "
-        "The image should be artistic and visually compelling. "
-        "Do NOT include any text, letters, or words in the image."
+        f"{track_context}"
+        f"{context_info}"
+        "Listen carefully to the mood, genre, tempo, instruments, and emotional tone of this music. "
+        "Then write a detailed image generation prompt for creating album cover artwork. "
+        "The prompt should describe:\n"
+        "- Visual style and artistic medium (e.g., oil painting, watercolor, digital art)\n"
+        "- Color palette that matches the music's mood\n"
+        "- Composition and focal point\n"
+        "- Specific visual elements and imagery\n"
+        "- Lighting and atmosphere\n\n"
+        "Output ONLY the image generation prompt in English, nothing else."
     )
     contents.append(types.Part.from_text(text=prompt_text))
 
     for name, wav_data in wav_clips:
         contents.append(types.Part.from_bytes(data=wav_data, mime_type="audio/wav"))
 
+    try:
+        response = client.models.generate_content(
+            model=analysis_model,
+            contents=contents,
+        )
+        result = response.text
+        if result:
+            print(f"    画像プロンプト生成成功（{len(result)}文字）")
+            return result
+        print("    画像プロンプト生成: 空のレスポンス")
+        return None
+    except Exception as e:
+        print(f"    画像プロンプト生成エラー: {e}")
+        return None
+
+
+def generate_ai_artwork(
+    clips: list[tuple[str, AudioSegment]],
+    album_name: str,
+    artist_name: str,
+    track_titles: list[str] | None = None,
+    album_context: str = "",
+    client: genai.Client | None = None,
+    analysis_model: str = "gemini-3.1-flash-lite-preview",
+    image_model: str = "gemini-3.1-flash-image-preview",
+) -> bytes | None:
+    """2段階パイプラインでアートワークを生成: 音声分析→画像生成"""
+    if client is None:
+        load_dotenv()
+        api_key = os.environ.get("google-studio-api-key")
+        if not api_key:
+            print("    google-studio-api-key が設定されていません")
+            return None
+        client = genai.Client(api_key=api_key)
+
+    # ステップ1: 音声を分析して画像生成プロンプトを生成
+    image_prompt = generate_image_prompt(
+        clips, album_name, artist_name,
+        track_titles=track_titles,
+        album_context=album_context,
+        client=client,
+        analysis_model=analysis_model,
+    )
+    if not image_prompt:
+        return None
+
+    time.sleep(2)
+
+    # ステップ2: 生成したプロンプトで画像を生成
+    final_prompt = (
+        f"{image_prompt}\n\n"
+        "Generate this as a square 1:1 album cover artwork. "
+        "Use a bold, simple composition with a clear focal point and dramatic lighting. "
+        "The artwork should feel like a professional album cover that reads well as a small thumbnail. "
+        "The image must contain only visual art with absolutely no text, letters, numbers, or words."
+    )
+
     max_retries = 3
     for attempt in range(1, max_retries + 1):
         try:
             response = client.models.generate_content(
-                model=model,
-                contents=contents,
+                model=image_model,
+                contents=final_prompt,
                 config=types.GenerateContentConfig(
                     response_modalities=["IMAGE"],
                 ),
@@ -272,7 +380,7 @@ def generate_ai_artwork(clips: list[tuple[str, AudioSegment]], album_name: str, 
     return None
 
 
-def process_album(album: dict, artist_name: str, artist_dir_name: str, model: str = "gemini-3.1-flash-image-preview"):
+def process_album(album: dict, artist_name: str, artist_dir_name: str, client: genai.Client | None = None, analysis_model: str = "gemini-3.1-flash-lite-preview", image_model: str = "gemini-3.1-flash-image-preview"):
     album_id = album["id"]
     output_path = ARTWORK_DIR / f"{album_id}.jpg"
 
@@ -303,7 +411,18 @@ def process_album(album: dict, artist_name: str, artist_dir_name: str, model: st
         print(f"  アートワーク無し → AI生成を試行: {album['name']}")
         clips = extract_peak_clips(album_dir)
         if clips:
-            ai_image_data = generate_ai_artwork(clips, album["name"], artist_name, model=model)
+            track_titles = extract_track_titles(album_dir)
+            album_context = ""
+            if client:
+                album_context = search_album_context(album["name"], artist_name, track_titles, client)
+            ai_image_data = generate_ai_artwork(
+                clips, album["name"], artist_name,
+                track_titles=track_titles,
+                album_context=album_context,
+                client=client,
+                analysis_model=analysis_model,
+                image_model=image_model,
+            )
             if ai_image_data:
                 img = Image.open(io.BytesIO(ai_image_data))
                 img = img.convert("RGB")
@@ -323,11 +442,16 @@ def main():
     parser = argparse.ArgumentParser(description="アルバムアートワークを抽出・生成する")
     parser.add_argument("--regenerate", action="store_true",
                         help="プレースホルダー画像（≤5KB）を削除して再生成する")
-    parser.add_argument("--regen-ai", nargs="+", metavar="SPEC",
+    parser.add_argument("--regen-ai", nargs="*", metavar="SPEC", default=None,
                         help="AIアートワークを再生成 (all, no-embedded, id:<ID>, name:<名前>)")
-    parser.add_argument("--model", default="gemini-3.1-flash-image-preview",
-                        help="AI生成に使用するモデル (デフォルト: gemini-3.1-flash-image-preview)")
+    parser.add_argument("--analysis-model", default="gemini-3.1-flash-lite-preview",
+                        help="音声分析に使用するモデル (デフォルト: gemini-3.1-flash-lite-preview)")
+    parser.add_argument("--image-model", default="gemini-3.1-flash-image-preview",
+                        help="画像生成に使用するモデル (デフォルト: gemini-3.1-flash-image-preview)")
     args = parser.parse_args()
+
+    if args.regen_ai is not None and len(args.regen_ai) == 0:
+        args.regen_ai = ["all"]
 
     ARTWORK_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -351,13 +475,17 @@ def main():
                 artist_name = m.group(2)
                 artist_dirs[artist_name] = d.name
 
-    if args.regen_ai:
+    load_dotenv()
+    api_key = os.environ.get("google-studio-api-key")
+    client = genai.Client(api_key=api_key) if api_key else None
+
+    if args.regen_ai is not None:
         targets = resolve_regen_targets(catalog, artist_dirs, args.regen_ai)
         print(f"\n再生成対象: {len(targets)} アルバム")
         for album, artist_name, dir_name in targets:
             print(f"\n  再生成: {artist_name} / {album['name']}")
             delete_artwork_if_exists(album["id"])
-            process_album(album, artist_name, dir_name, model=args.model)
+            process_album(album, artist_name, dir_name, client=client, analysis_model=args.analysis_model, image_model=args.image_model)
         print(f"\nAIアートワーク再生成完了: {len(targets)} アルバム")
         return
 
@@ -365,7 +493,7 @@ def main():
         print(f"\n{artist['name']}:")
         dir_name = artist_dirs.get(artist["name"], "")
         for album in artist["albums"]:
-            process_album(album, artist["name"], dir_name, model=args.model)
+            process_album(album, artist["name"], dir_name, client=client, analysis_model=args.analysis_model, image_model=args.image_model)
 
     print(f"\nアートワーク生成完了: {ARTWORK_DIR}")
 
