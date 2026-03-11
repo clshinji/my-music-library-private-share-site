@@ -78,6 +78,62 @@ uv run scripts/generate_artwork.py   # アートワーク抽出
 npm run dev                           # 開発サーバー起動
 ```
 
+## アートワーク生成スクリプト
+
+`scripts/generate_artwork.py` はアルバムアートワークの抽出・AI生成を行うスクリプト。
+
+### 基本的な使い方
+
+```bash
+# 全アルバムのアートワークを生成（既存はスキップ）
+uv run python scripts/generate_artwork.py
+
+# プレースホルダー画像（≤5KB）を削除して再生成
+uv run python scripts/generate_artwork.py --regenerate
+```
+
+### AIアートワークの再生成（`--regen-ai`）
+
+既にAI生成済みのアートワークを再生成したい場合に使用する。対象アルバムを柔軟に指定可能。
+
+```bash
+# 全アルバムを再生成
+uv run python scripts/generate_artwork.py --regen-ai all
+
+# 埋め込みアートワークが無いアルバムのみ再生成
+uv run python scripts/generate_artwork.py --regen-ai no-embedded
+
+# アルバムIDを指定して再生成
+uv run python scripts/generate_artwork.py --regen-ai id:f7092a3e2a4b
+
+# アルバム名の部分一致で再生成（大文字小文字を区別しない）
+uv run python scripts/generate_artwork.py --regen-ai name:Disney
+
+# 複数指定（union で結合、重複は自動排除）
+uv run python scripts/generate_artwork.py --regen-ai id:aaa id:bbb name:Jazz
+```
+
+| 指定子 | 説明 |
+|---|---|
+| `all` | カタログ内の全アルバム |
+| `no-embedded` | 音楽ファイルに埋め込みアートワークが無いアルバム |
+| `id:<ID>` | アルバムIDの完全一致 |
+| `name:<文字列>` | アルバム名の部分一致（大文字小文字無視） |
+
+### モデル切り替え（`--model`）
+
+AI生成に使用するGeminiモデルを変更できる。`--regen-ai` との併用だけでなく、通常実行時にも有効。
+
+```bash
+# デフォルト: gemini-3.1-flash-image-preview
+uv run python scripts/generate_artwork.py --regen-ai no-embedded --model gemini-2.0-flash-preview-image-generation
+```
+
+### 処理フロー
+
+- **通常実行**: 既存アートワークはスキップし、未生成のアルバムのみ処理（埋め込み抽出 → AI生成 → プレースホルダー）
+- **`--regen-ai`**: 対象アルバムを1件ずつ「既存アートワーク削除 → 再生成」の順で処理。途中エラーでもアートワーク欠損を最小限にする
+
 ## デプロイ
 
 詳細は [DEPLOY.md](./DEPLOY.md) を参照。
